@@ -1,0 +1,18 @@
+.Box{
+   
+    
+    /* background-color: blueviolet; */
+    margin-left: -50px ;
+    
+}
+.Frame{
+    z-index: 3;
+    position: relative;
+    
+    
+}
+
+.modal-content{
+    border: none !important;
+    background-color: transparent !important;
+}
