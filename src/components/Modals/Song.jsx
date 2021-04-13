@@ -9,12 +9,13 @@ function PlayASong(props){
   <Modal
 
     show={props.show}
-    onHide={props.playMusic}
-    dialogClassName=" modal-90w"
+    onHide={props.handleClose}
     aria-labelledby="example-custom-modal-styling-title"
+    dialogClassName=" modal-90w"
     centered={true}
     scrollable={false}
   >
+    <Modal.Header closebutton />
     
     <Modal.Body className="Box">
     <iframe className="Frame"
