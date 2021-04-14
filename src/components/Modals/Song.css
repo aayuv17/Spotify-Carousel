@@ -1,18 +1,38 @@
-.Box{
+.Modal{
+    margin-top: 0;
+    height:100vh;
+    width:100%;
+    /* position: absolute; */
+    margin-bottom: 0;
    
-    
-    /* background-color: blueviolet;*/ 
-    margin-left: -50px ;
-    
 }
+.Overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+  }
+
+
 .Frame{
-    z-index: 3;
-    position: relative;
-    
-    
+    z-index: 30;
+    margin-top: 10%;
+    margin-left: 40%; 
+    margin-right:100%;
+    position:absolute;
 }
 
-.modal-content{
-    border: none !important;
-    background-color: transparent !important;
+
+.Btn{
+margin-left: 95%;
+border: none;
+background-color: transparent;
+position: absolute;
+z-index: 5;
+}
+
+.Btn:hover{
+    opacity: 0.6;
 }

@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import indoor from '../../images/indoor.jpg'
-import Forest from '../../images/forest.jpg'
-import Butterfly from '../../images/butterfly.jpg';
-import Sky from '../../images/sky.jpg'
-import Galaxy from '../../images/galaxy.jpg'
-import PlayASong from './../Modals/Song';
+import indoor from '../../Images/indoor.jpg'
+import Forest from '../../Images/forest.jpg'
+import Butterfly from '../../Images/butterfly.jpg';
+import Sky from '../../Images/sky.jpg'
+import Galaxy from '../../Images/galaxy.jpg'
+
 import './Carousel.css';
 import './Carousel.scss';
 import Items from './../Items/Carousel-items';
+import PlayASong from '../Modals/Song'
+
 
 class DemoCarousel extends Component {
     constructor(props){
@@ -51,10 +53,13 @@ class DemoCarousel extends Component {
     render(){
         return (
             <div>
+
             <PlayASong 
-            show = {this.state.showModal}
-            handleClose = {this.handleClose}
+                isOpen={this.state.showModal}
+                onRequestClose={this.handleClose}
+                button={this.handleClose}
             />
+            
             <Carousel 
             autofocus 
             infiniteLoop 
@@ -69,6 +74,7 @@ class DemoCarousel extends Component {
             onClickItem = {this.onClickItemEvent}
             onChange = {this.onChangeEvent}
             width='100%'
+            
             >
                 <Items 
                     src={indoor}
@@ -100,6 +106,7 @@ class DemoCarousel extends Component {
                     title="Spotify"
                     description='Description'
                 />
+                
             </Carousel>
             </div>
         );

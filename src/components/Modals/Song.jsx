@@ -1,34 +1,43 @@
 import React from "react"
-import {Modal} from 'react-bootstrap'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons'
+import Modal from 'react-modal';
+import ModalCarousel from "../Carousel-Modal/Carousel-Modal"
 import './Song.scss'
 import './Song.css'
 
 
+
 function PlayASong(props){
   return(
-  <Modal
 
-    show={props.show}
-    onHide={props.handleClose}
-    aria-labelledby="example-custom-modal-styling-title"
-    dialogClassName=" modal-90w"
-    centered={true}
-    scrollable={false}
-  >
-    <Modal.Header closebutton />
+    <Modal
+    isOpen={props.isOpen}
+    //onAfterOpen={afterOpenModal}
+    onRequestClose={props.onRequestClose}
+    contentLabel="Song"
+    className="Modal"
+    //overlayClassName="Overlay"
+
+    >
     
-    <Modal.Body className="Box">
+    <button className="Btn" onClick={props.button}><FontAwesomeIcon icon={faTimes} size="2x" style={{color: "white"}}/></button>
     <iframe className="Frame"
     title="Music" 
      src="https://open.spotify.com/embed/track/7lPN2DXiMsVn7XUKtOW1CS"
-     width="600" 
-     height="500" 
+     width="300" 
+     height="340" 
      frameborder="0" 
      allowtransparency="true" 
      allow="encrypted-media">
        
      </iframe>
-    </Modal.Body>
-  </Modal>)
+    
+     <ModalCarousel/>
+
+    </Modal>
+    
+ 
+  )
 }
 export default PlayASong;
