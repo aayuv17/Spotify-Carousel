@@ -11,6 +11,7 @@ import './Carousel-Modal.css'
 import './Carousel-Modal.scss'
 
 
+
 //const axios = require('axios');
 
 class ModalCarousel extends Component {

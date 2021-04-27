@@ -1,9 +1,10 @@
 .Modal{
-    margin-top: 0;
-    height:100vh;
-    width:100%;
-    /* position: absolute; */
-    margin-bottom: 0;
+    margin-top: 55px;
+    margin-right: auto;
+    margin-left: auto;
+    height:90vh;
+    width:90%;
+    
    
 }
 .Overlay {
@@ -18,19 +19,23 @@
 
 .Frame{
     z-index: 30;
-    margin-top: 10%;
-    margin-left: 40%; 
-    margin-right:100%;
-    position:absolute;
+    position: relative;
+    margin-left: 40%;
+   
+  
 }
-
-
+.animation{
+    z-index: 10;
+    position: absolute;
+    margin-left: 1%;
+}
 .Btn{
+margin-top: 1%;
 margin-left: 95%;
 border: none;
 background-color: transparent;
-position: absolute;
-z-index: 5;
+position: relative;
+z-index: 15;
 }
 
 .Btn:hover{
