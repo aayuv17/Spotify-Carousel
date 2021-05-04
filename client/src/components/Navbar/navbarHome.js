@@ -14,12 +14,9 @@ return(
   <Navbar.Collapse id="responsive-navbar-nav">
   <hr class="Line"></hr>
   <Nav className="px-1">
-  <Nav.Link href="#">Carousel</Nav.Link>
-  <Nav.Link href="#">Wall of Music</Nav.Link>
-  <Nav.Link href="#">Get Recommendations</Nav.Link>
-  <Nav.Link href="#">Tracks Saved for Later</Nav.Link>
-  <Nav.Link href="#">Saved Playlists</Nav.Link>
-  <Nav.Link href="#">Explicit Tracks</Nav.Link>
+  <Nav.Link href="#">About</Nav.Link>
+  <Nav.Link href="#">Contact Us</Nav.Link>
+
 
   </Nav>
   </Navbar.Collapse>

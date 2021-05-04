@@ -5,6 +5,7 @@ import PlayASong from './../Modals/Song';
 import './Carousel.css';
 import './Carousel.scss';
 import Items from './../Items/Carousel-items';
+
 //import Image1 from './../../images/Image1.jpg';
 
 const axios = require('axios');
@@ -72,7 +73,8 @@ class DemoCarousel extends Component {
         }
 
         return (
-            <div>
+            <div id="Carousel">
+            
             {this.state.showModal && (
             <PlayASong 
             isOpen={this.state.showModal}
