@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faPlusCircle} from '@fortawesome/free-solid-svg-icons'
 import Customize from './customize'
+
 import Canvas from './../canvas/canvas';
 import Modal from 'react-modal';
 import './Song.scss'
@@ -12,14 +13,33 @@ import axios from "axios";
 
 
 class PlayASong extends Component{
+  
 
   constructor(props){
     super(props);
     this.state = {
       modal: [],
-      showModal: false
+      showModal: false,
+      color1:'#ffffff',
+      color2:'#ffffff',
+      color3:'#ffffff',
+      color4:'#000000'
+
     }
   }
+   setColor1=(color1)=>{
+    this.setState({color1:color1})
+  }
+  setColor2=(color2)=>{
+    this.setState({color2:color2})
+  }
+  setColor3=(color3)=>{
+    this.setState({color3:color3})
+  }
+  setColor4=(color4)=>{
+    this.setState({color4:color4})
+  }
+
   handleClose = () => {
     this.setState({
         showModal: false,
@@ -63,7 +83,14 @@ class PlayASong extends Component{
     style={customStyles}
     >
 
-    <Canvas className='Modal animation' />
+    <Canvas className='Modal animation'
+            backgroundColor={this.state.color4}
+            particle1={this.state.color1}
+            particle2={this.state.color2}
+            particle3={this.state.color3} 
+          
+     />
+   
     <button className="Btn" onClick={this.props.button}>
       <FontAwesomeIcon icon={faTimes} size="2x" style={{color: "white"}}/>
     </button>
@@ -98,6 +125,15 @@ class PlayASong extends Component{
     <Customize
       isOpen={this.state.showModal}
       onRequestClose={this.handleClose}
+      color1={this.state.color1}
+      color2={this.state.color2}
+      color3={this.state.color3}
+      color4={this.state.color4}
+      setColor1={this.setColor1}
+      setColor2={this.setColor2}
+      setColor3={this.setColor3}
+      setColor4={this.setColor4}
+      
     />
     </div>
  
