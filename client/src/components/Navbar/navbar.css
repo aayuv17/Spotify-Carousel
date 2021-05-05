@@ -27,3 +27,9 @@
     background-color: white;
     height: 1px;
 }
+.toggle{
+    position: absolute;
+    margin-left: 92%;
+    margin-top:-35px;
+
+}

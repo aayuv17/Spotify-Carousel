@@ -1,7 +1,8 @@
-import React, { Component } from "react"
+import React, { Component ,useState} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import Customize from './customize'
 import Canvas from './../canvas/canvas';
 import Modal from 'react-modal';
 import './Song.scss'
@@ -11,11 +12,24 @@ import axios from "axios";
 
 
 class PlayASong extends Component{
+
   constructor(props){
     super(props);
     this.state = {
-      modal: []
+      modal: [],
+      showModal: false
     }
+  }
+  handleClose = () => {
+    this.setState({
+        showModal: false,
+    });
+}
+
+  onClickEvent= ()=>{
+    this.setState({
+      showModal:true
+    })
   }
 
   componentDidMount(){
@@ -40,6 +54,7 @@ class PlayASong extends Component{
     };
   return(
     <div>
+    
     <Modal
     isOpen={this.props.isOpen}
     onRequestClose={this.props.onRequestClose}
@@ -73,13 +88,17 @@ class PlayASong extends Component{
      <strong>Add to Playlist</strong>
      </button>
 
-  <button className="customise">
+  <button className="customise" onClick={this.onClickEvent}>
     <FontAwesomeIcon icon={faPalette} size="2x" style={{color: "white"}} /> 
     <br></br>        
      <strong>Customize</strong>
      </button>
 
     </Modal>
+    <Customize
+      isOpen={this.state.showModal}
+      onRequestClose={this.handleClose}
+    />
     </div>
  
   )
