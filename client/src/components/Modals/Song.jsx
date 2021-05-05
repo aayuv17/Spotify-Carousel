@@ -2,8 +2,8 @@ import React, { Component ,useState} from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPalette, faTimes } from '@fortawesome/free-solid-svg-icons'
 import { faPlusCircle} from '@fortawesome/free-solid-svg-icons'
+import { faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 import Customize from './customize'
-
 import Canvas from './../canvas/canvas';
 import Modal from 'react-modal';
 import './Song.scss'
@@ -14,16 +14,19 @@ import axios from "axios";
 
 class PlayASong extends Component{
   
-
+  
   constructor(props){
     super(props);
+    
     this.state = {
       modal: [],
       showModal: false,
       color1:'#ffffff',
       color2:'#ffffff',
       color3:'#ffffff',
-      color4:'#000000'
+      color4:'#000000',
+      icon:faPlusCircle,
+      text:"Add to playlist"
 
     }
   }
@@ -44,6 +47,19 @@ class PlayASong extends Component{
     this.setState({
         showModal: false,
     });
+}
+
+changeText=(text)=>{
+  
+  if((text)==="Add to playlist")
+     { this.setState({text:"Added"})
+       this.setState({icon:faCheckCircle})
+      }
+  else
+     { this.setState({text:"Add to playlist"})
+     this.setState({icon:faPlusCircle})
+
+    }
 }
 
   onClickEvent= ()=>{
@@ -109,10 +125,13 @@ class PlayASong extends Component{
     > 
   </iframe>
   
-  <button className="add">
-    <FontAwesomeIcon icon={faPlusCircle} size="2x" style={{color: "white"}} />  
+ 
+  <button className="add" onClick={()=>{this.changeText(this.state.text)}}>
+  {console.log(this.icon)}
+    <FontAwesomeIcon icon={this.state.icon} size="2x" style={{color: "white"}} />  
     <br></br>    
-     <strong>Add to Playlist</strong>
+    
+     <strong>{this.state.text}</strong>
      </button>
 
   <button className="customise" onClick={this.onClickEvent}>
