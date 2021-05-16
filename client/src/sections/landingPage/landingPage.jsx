@@ -9,7 +9,7 @@ function LandingPage() {
     <div id="Home">
       <Navbar />
 
-      <img className="background-Img" src={Background}></img>
+      <img className="background-Img" src={Background}/>
       <center>
         <h1 className="Heading">Application Name</h1>
       </center>

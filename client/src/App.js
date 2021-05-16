@@ -7,7 +7,7 @@ import GetRecommendations from './sections/getRecommendations/getRecommendations
 import SavedPlaylists from './sections/savedPlaylists/savedPlaylists';
 import Login from './sections/login/login';
 import SignUp from './sections/signUp/signUp';
-
+import About from './sections/about/about' ;
 import LandingPage from './sections/landingPage/landingPage';
 
 function App() {
