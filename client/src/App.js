@@ -9,7 +9,7 @@ import Login from './sections/login/login';
 import SignUp from './sections/signUp/signUp';
 import About from './sections/about/about' ;
 import LandingPage from './sections/landingPage/landingPage';
-
+import ContactUs from './sections/contactUs/contactUs';
 function App() {
   return (
     <div className="App">
